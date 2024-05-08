@@ -2,8 +2,8 @@
   "name": "braille-ascii-art",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/LachlanArthur/Braille-ASCII-Art.git",
-  "author": "LachlanArthur <lachlanarthur@gmail.com>",
+  "repository": "https://github.com/xcxxciii/enzo101.git",
+  "author": "xcxxciii <enzodecode8@gmail.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
