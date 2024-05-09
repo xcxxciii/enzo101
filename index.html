@@ -39,6 +39,10 @@
             filter: invert(1); /* Efek invert untuk card */
         }
 
+        .output.h-invert {
+            filter: invert(1); /* Efek invert untuk output */
+        }
+
         .card h1 {
             font-size: 24px;
             margin-bottom: 10px;
@@ -170,13 +174,16 @@
         // Ambil elemen checkbox untuk invert
         const invertCheckbox = document.getElementById('invert');
         const card = document.getElementById('card');
+        const output = document.getElementById('output');
 
         // Fungsi untuk mengatur invert
         function setInvert() {
             if (invertCheckbox.checked) {
                 card.classList.add('h-invert');
+                output.classList.add('h-invert');
             } else {
                 card.classList.remove('h-invert');
+                output.classList.remove('h-invert');
             }
         }
 
