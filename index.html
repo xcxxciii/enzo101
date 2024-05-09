@@ -8,7 +8,6 @@
     <title>Braille ASCII Art</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-     
         /* CSS untuk menempatkan iklan di header */
         .advertisement-header {
             text-align: center;
@@ -21,29 +20,20 @@
             border-radius: 5px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
         }
-        /* CSS untuk sidebar iklan */
-.card {
-    max-width: 1110px;
-    margin: 0 auto;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin-right: 180px; /* Atur jarak antara card dengan sidebar */
-}
 
-.sidebar-ad {
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    height: 80vh;
-    width: 150px;
-}
+        /* CSS untuk sidebar iklan */
+        .card {
+            max-width: auto; /* Ubah maksimum lebar menjadi relatif */
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-ad {
+            display: none; /* Sembunyikan sidebar pada perangkat seluler */
+        }
 
         .card h1 {
             font-size: 24px;
@@ -81,7 +71,7 @@
         }
 
         #output {
-            min-height: 900px;
+            min-height:  auto;
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
@@ -92,18 +82,29 @@
             font-weight: bold;
             color: #007bff;
         }
-        .card .copyright {
-    margin-top: 10px; /* Atur jarak antara card dengan teks hak cipta */
-    text-align: center; /* Pusatkan teks */
-    font-size: 12px; /* Sesuaikan ukuran teks sesuai kebutuhan */
-    color: #666; /* Sesuaikan warna teks sesuai kebutuhan */
-}
 
+        .copyright {
+            margin-top: 10px; /* Atur jarak antara card dengan teks hak cipta */
+            text-align: center; /* Pusatkan teks */
+            font-size: 12px; /* Sesuaikan ukuran teks sesuai kebutuhan */
+            color: #666; /* Sesuaikan warna teks sesuai kebutuhan */
+        }
+
+        /* Media queries untuk perangkat seluler */
+        @media only screen and (max-width: 600px) {
+            .card {
+                padding: 10px; /* Atur padding lebih kecil untuk perangkat seluler */
+            }
+
+            #output {
+                min-height: auto; /* Sesuaikan tinggi output sesuai konten */
+            }
+        }
     </style>
 </head>
 
 <body>
-  <div class="advertisement-header">
+    <div class="advertisement-header">
         <!-- Iklan di header -->
         <div class="ad-header">
             <script type="text/javascript">
@@ -111,15 +112,6 @@
             </script>
             <p>Advertisement Header</p>
         </div>
-    </div>
-    
-    <!-- Sidebar untuk iklan -->
-    <div class="sidebar-ad">
-        <!-- Iklan Sidebar -->
-        <script type="text/javascript">
-            // Ganti dengan kode iklan sidebar Anda
-        </script>
-        <p>Advertisement Sidebar</p>
     </div>
 
     <div class="card">
@@ -169,12 +161,11 @@
         <div id="output" contenteditable="true"></div>
     </div>
 
-    <script src="dist/index.js?v=3" type="module"></script>
+     <script src="dist/index.js?v=3" type="module"></script>
 
     <div class="copyright">
         <p>© 2024 All rights reserved | ENZO™</p>
     </div>
-</div>
 
 </body>
 
