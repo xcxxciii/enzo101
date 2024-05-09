@@ -2,60 +2,179 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Braille ASCII Art</title>
-	<link rel="stylesheet" href="styles.css?v=3">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Braille ASCII Art</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     
+        /* CSS untuk menempatkan iklan di header */
+        .advertisement-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .ad-header {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
+        /* CSS untuk sidebar iklan */
+.card {
+    max-width: 1110px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-right: 180px; /* Atur jarak antara card dengan sidebar */
+}
+
+.sidebar-ad {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    height: 80vh;
+    width: 150px;
+}
+
+        .card h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .card input,
+        .card select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .card button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .card button:hover {
+            background-color: #0056b3;
+        }
+
+        #output {
+            min-height: 900px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        #char-count {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .card .copyright {
+    margin-top: 10px; /* Atur jarak antara card dengan teks hak cipta */
+    text-align: center; /* Pusatkan teks */
+    font-size: 12px; /* Sesuaikan ukuran teks sesuai kebutuhan */
+    color: #666; /* Sesuaikan warna teks sesuai kebutuhan */
+}
+
+    </style>
 </head>
 
 <body>
+  <div class="advertisement-header">
+        <!-- Iklan di header -->
+        <div class="ad-header">
+            <script type="text/javascript">
+                // Ganti dengan kode iklan header Anda
+            </script>
+            <p>Advertisement Header</p>
+        </div>
+    </div>
+    
+    <!-- Sidebar untuk iklan -->
+    <div class="sidebar-ad">
+        <!-- Iklan Sidebar -->
+        <script type="text/javascript">
+            // Ganti dengan kode iklan sidebar Anda
+        </script>
+        <p>Advertisement Sidebar</p>
+    </div>
 
-	<h1>IMAGE Braille ASCII Art</h1>
-	<meta charset="UTF-8">XDecrytorId">ENZO</a> | <a href="https://t.me/ENZ0101">TELEGRAM</a></p>
-	<p>
-		<label for="filepicker">Image</label>
-		<input type="file" id="filepicker" accept=".png,.jpeg,.jpg">
-	</p>
+    <div class="card">
+        <h1>Image Braille ASCII Art</h1>
+        <p>By <a href="https://t.me/XDecrytorId">ENZO</a> | <a href="https://t.me/ENZ0101">Tlegram:ENZO X-DECODEZ</a></p>
 
-	<p>
-		<label for="dither">Dither Mode</label>
-		<select id="dither">
-			<option value="floydSteinberg">Floyd-Steinberg (simple)</option>
-			<option value="stucki">Stucki (edge contrast)</option>
-			<option value="atkinson">Atkinson (high contrast)</option>
-			<option value="threshold">Threshold (no dither)</option>
-		</select>
-	</p>
+        <p>
+            <label for="filepicker">Image</label>
+            <input type="file" id="filepicker" accept=".png,.jpeg,.jpg">
+        </p>
 
-	<p>
-		<label for="threshold">Threshold</label>
-		<input type="range" id="threshold" min="0" max="254" value="127">
-	</p>
+        <p>
+            <label for="dither">Dither Mode</label>
+            <select id="dither">
+                <option value="floydSteinberg">Floyd-Steinberg (simple)</option>
+                <option value="stucki">Stucki (edge contrast)</option>
+                <option value="atkinson">Atkinson (high contrast)</option>
+                <option value="threshold">Threshold (no dither)</option>
+            </select>
+        </p>
 
-	<p>
-		<label for="width">Width</label>
-		<input type="number" id="width" value="100" step="10"> characters (>500 gets laggy)
-	</p>
+        <p>
+            <label for="threshold">Threshold</label>
+            <input type="range" id="threshold" min="0" max="254" value="127">
+        </p>
 
-	<p>
-		<label for="invert">Invert</label>
-		<input type="checkbox" id="invert">
-	</p>
+        <p>
+            <label for="width">Width</label>
+            <input type="number" id="width" value="100" step="10"> characters (>500 gets laggy)
+        </p>
 
-	<p>
-		<label for="font-size">Preview font size</label>
-		<input type="number" id="font-size" value="10">
-	</p>
+        <p>
+            <label for="invert">Invert</label>
+            <input type="checkbox" id="invert">
+        </p>
 
-	<p>
-		<button id="copy">Copy</button>
-		(<span id="char-count">0</span> characters)
-	</p>
+        <p>
+            <label for="font-size">Preview font size</label>
+            <input type="number" id="font-size" value="10">
+        </p>
 
-	<div id="output" contenteditable="true"></div>
+        <p>
+            <button id="copy">Copy</button>
+            (<span id="char-count">0</span> characters)
+        </p>
 
-	<script src="dist/index.js?v=3" type="module"></script>
+        <div id="output" contenteditable="true"></div>
+    </div>
+
+    <script src="dist/index.js?v=3" type="module"></script>
+
+    <div class="copyright">
+        <p>© 2024 All rights reserved | ENZO™</p>
+    </div>
+</div>
 
 </body>
 
