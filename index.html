@@ -35,6 +35,10 @@
             display: none; /* Sembunyikan sidebar pada perangkat seluler */
         }
 
+        .card.h-invert {
+            filter: invert(1); /* Efek invert untuk card */
+        }
+
         .card h1 {
             font-size: 24px;
             margin-bottom: 10px;
@@ -71,7 +75,7 @@
         }
 
         #output {
-            min-height:  auto;
+            min-height: auto;
             background-color: #f9f9f9;
             padding: 10px;
             border-radius: 5px;
@@ -84,20 +88,20 @@
         }
 
         .copyright {
-            margin-top: 10px; /* Atur jarak antara card dengan teks hak cipta */
-            text-align: center; /* Pusatkan teks */
-            font-size: 12px; /* Sesuaikan ukuran teks sesuai kebutuhan */
-            color: #666; /* Sesuaikan warna teks sesuai kebutuhan */
+            margin-top: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
         }
 
         /* Media queries untuk perangkat seluler */
         @media only screen and (max-width: 600px) {
             .card {
-                padding: 10px; /* Atur padding lebih kecil untuk perangkat seluler */
+                padding: 10px;
             }
 
             #output {
-                min-height: auto; /* Sesuaikan tinggi output sesuai konten */
+                min-height: auto;
             }
         }
     </style>
@@ -110,11 +114,11 @@
             <script type="text/javascript">
                 // Ganti dengan kode iklan header Anda
             </script>
-            <p>Test</p>
+            <p>Advertisement Header</p>
         </div>
     </div>
 
-    <div class="card">
+    <div class="card" id="card">
         <h1>Image Braille ASCII Art</h1>
         <p>By <a href="https://t.me/XDecrytorId">ENZO</a> | <a href="https://t.me/ENZ0101">Telegram:ENZO X-DECODEZ</a></p>
 
@@ -161,7 +165,24 @@
         <div id="output" contenteditable="true"></div>
     </div>
 
-     <script src="dist/index.js?v=3" type="module"></script>
+    <script src="dist/index.js" type="module"></script>
+    <script>
+        // Ambil elemen checkbox untuk invert
+        const invertCheckbox = document.getElementById('invert');
+        const card = document.getElementById('card');
+
+        // Fungsi untuk mengatur invert
+        function setInvert() {
+            if (invertCheckbox.checked) {
+                card.classList.add('h-invert');
+            } else {
+                card.classList.remove('h-invert');
+            }
+        }
+
+        // Panggil fungsi setInvert saat checkbox diubah
+        invertCheckbox.addEventListener('change', setInvert);
+    </script>
 
     <div class="copyright">
         <p>© 2024 All rights reserved | ENZO™</p>
